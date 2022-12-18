@@ -1,12 +1,21 @@
 
 import NavBar from './NavaBar';
-import {Box} from '@mui/material'
+import Banner from './Banner';
 
+import {Box, styled} from '@mui/material'
+
+const Components = styled(Box)`
+    padding: 10px;
+    background: #f2f2f2;
+`
 const Home = ()=>{
     return (
-        <Box>
+        <>
             <NavBar/>
-        </Box>
+            <Components>
+                <Banner/>
+            </Components>
+        </>
     )
 }
 
