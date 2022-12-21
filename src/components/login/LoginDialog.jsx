@@ -1,5 +1,7 @@
-import {useState} from 'react'
+import {useState, useContext} from 'react'
 import { Box, Button, Dialog, TextField, Typography,styled } from "@mui/material";
+
+import {DataContext} from '../../context/DataProvider'
 
 import { authenticateSignup } from '../../service/api';
 
@@ -90,8 +92,10 @@ const LoginDialog = ({open,setOpen})=>{
         toggleAccount(accountInitialValues.signup);
     }
 
+    
     const [signup, setSignup] = useState(signupInitialValues);
-
+    
+    const {setAccount} = useContext(DataContext);
 
     // to hide dialog box
     const handleClose = ()=>{
@@ -113,6 +117,7 @@ const LoginDialog = ({open,setOpen})=>{
             return;
         }
         handleClose();
+        setAccount(signup.firstname);
     }
 
     return(
