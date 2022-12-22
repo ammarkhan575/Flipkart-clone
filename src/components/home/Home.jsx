@@ -14,9 +14,9 @@ const Components = styled(Box)`
 `
 const Home = ()=>{
 
-    const getProducts = useSelector(state=> state.getProducts)
-
-    const dispatch = useDispatch();
+    const {products} = useSelector(state=> state.getProducts)
+    console.log(products)
+    const dispatch = useDispatch()
     useEffect(()=>{
         dispatch(getProducts());
     },[dispatch])
