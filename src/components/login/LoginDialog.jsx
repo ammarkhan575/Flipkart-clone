@@ -4,7 +4,6 @@ import { Box, Button, Dialog, TextField, Typography,styled } from "@mui/material
 import {DataContext} from '../../context/DataProvider'
 
 import { authenticateSignup, authenticateLogin } from '../../service/api';
-import { lineHeight } from '@mui/system';
 
 const Component = styled(Box)`
     height: 70vh;
@@ -60,6 +59,12 @@ const SignupText = styled(Typography)`
     text-align: center;
     font-weight: 600;
     cursor: pointer;
+`
+
+const Error = styled(Typography)`
+    color: red;
+    font-size: 10px;
+    line-height: 0;
 `
 
 const accountInitialValues ={
@@ -162,7 +167,7 @@ const LoginDialog = ({open,setOpen})=>{
                 {
                     account.view==='login' ?
                     <RightBox>
-                        { true && <Typography style={{color: '#ff6161', fontSize: '10', lineHeight: '0'}}>Please Enter valid username and password!</Typography> }
+                        { error && <Error>Please Enter valid username and password!</Error> }
                         <TextField variant="standard" onChange={(e)=> onValueChange(e)} name='username' label='Enter Username'/>
                         <TextField variant="standard" onChange={(e)=> onValueChange(e)} name='password' label='Enter password'/>
                         <Text>By continuing, you agree to Flipkart's Terms of Use and Privacy Policy</Text>
