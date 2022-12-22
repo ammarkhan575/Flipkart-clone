@@ -6,14 +6,20 @@ const Component = styled(Box)`
     display: flex;
 `
 
-const RightComponent = styled(Box)`
-    width: 83%
-`
+const RightComponent = styled(Box)(({theme})=>({
+    width: '83%',
+    [theme.breakpoints.down('md')]:{
+        width: '100%'
+    }
+}))
 
-const LeftComponent = styled(Box)`
-    background: #ffffff;
-    padding : 5px;
-`
+const LeftComponent = styled(Box)(({theme})=>({
+    background: '#ffffff',
+    padding: '5px',
+    [theme.breakpoints.down('md')]:{
+        display: 'none'
+    }
+}))
 
 const AdSlide = ({products, title, timer})=>{
     const adURL = 'https://rukminim1.flixcart.com/flap/464/708/image/633789f7def60050.jpg?q=70';
