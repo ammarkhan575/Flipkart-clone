@@ -10,22 +10,35 @@ import { DataContext } from '../../context/DataProvider';
 import LoginDialog from '../login/LoginDialog'
 import Profile from './Profile'
 
-const Wrapper = styled(Box)`
-    display: flex;
-    align-items: center;
-    margin: 0 3% 0 0;
-    & > button, &>p , &>div{
-        margin-right: 40px;
-        font-size: 15px;
+const Wrapper = styled(Box)(({theme})=>({
+    display: 'flex',
+    alignItems: 'center',
+    margin:'0 3% 0 0',
+    '& > button, &>p , &>div':{
+        marginRight: '40px',
+        fontSize: '15px'
+    },
+    [theme.breakpoints.down('md')]:{
+        display: 'block',
+        marginTop: '200px',
+        '& > *':{
+            marginTop: '20px'
+        }
     }
-`
-const FlexContainer = styled(Box)`
-    display: flex;
-`
+}))
+const FlexContainer = styled(Box)(({theme})=>({
+    display: 'flex',
+    [theme.breakpoints.down('md')]:{
+        display: 'block'
+
+    }
+}))
 
 const LoginButton = styled(Button)`
-    color: #2874f0;
-    background: #fff;
+    ${'' /* color: #2874f0;
+    background: #fff; */}
+    color: #fff;
+    background: #2874f0;
     text-transform: none;
     padding: 5px 40px;
     border-radius: 2px;
