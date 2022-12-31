@@ -11,6 +11,7 @@ import {Box} from '@mui/material'
 
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Cart from './components/cart/Cart';
+import CheckoutSuccess from './components/cart/CheckoutSuccess';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path='/' element={<Home/>} />
             <Route path='/product/:id' element={<DetailView/>} />
             <Route path='/cart' element={<Cart/>} />
+            <Route path='/checkout-success' element={<CheckoutSuccess/>}/>
           </Routes>
         </Box>
       </BrowserRouter>

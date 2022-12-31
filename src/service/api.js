@@ -20,3 +20,13 @@ export const authenticateLogin = async (data)=>{
         return error.response;
     }
 }
+
+export const payWithStripe = async ()=>{
+    try{
+        const response = await axios.post(`${URL}/create-checkout-session`);
+        console.log(response);
+    }
+    catch(error){
+        console.log('error while calling stripe api',error);
+    }
+}
