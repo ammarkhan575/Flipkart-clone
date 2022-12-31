@@ -1,10 +1,12 @@
 
-import { Grid, Box, Typography,Button, styled } from "@mui/material";
+import { Grid, Box, Typography, styled } from "@mui/material";
 import { useSelector } from "react-redux";
 
 import CartItem from './CartItem'
 import CartPayment from './CartPayment'
 import EmptyCart from "./EmptyCart";
+
+import PayButton from "./PayButton";
 
 const Container = styled(Grid)(({theme})=>({
     padding: '30px 135px',
@@ -26,15 +28,6 @@ const ButtonWrapper = styled(Box)`
     border-top: 1px solid #f0f0f0;
 `
 
-const StyledButton = styled(Button)`
-    display: flex;
-    margin-left: auto;
-    background: #fb641b;
-    color: #fff;
-    width: 250px;
-    height: 50px;
-    border-radius: 2px;
-`
 
 const LeftContainer = styled(Grid)(({theme})=>({
     paddingRight: '15px',
@@ -63,7 +56,7 @@ const Cart = () => {
                             ))
                         }
                         <ButtonWrapper>
-                            <StyledButton>Place Order</StyledButton>
+                            <PayButton cartItems={cartItems} />
                         </ButtonWrapper>
                     </LeftContainer>
                     <Grid item lg={3} md={3} sm={12} xs={12}>
