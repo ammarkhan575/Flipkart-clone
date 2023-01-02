@@ -1,4 +1,3 @@
-import {useState} from 'react'
 import { Box, Button, styled } from "@mui/material"
 
 import {ShoppingCart as Cart, FlashOn as Flash} from '@mui/icons-material';
