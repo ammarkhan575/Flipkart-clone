@@ -42,7 +42,6 @@ const ProductImage = ({product})=>{
     const naviagate = useNavigate();
     const dispatch = useDispatch();
     const {id} = product;
-    console.log(product);
     const addItemToCart = ()=>{
         dispatch(addToCart(id,quantity));
         naviagate('/cart');
