@@ -10,7 +10,7 @@ const StyledButton = styled(Button)`
     height: 50px;
     border-radius: 2px;
 `;
-const URL = 'http://localhost:8000'
+const URL = process.env.SERVER_URL || 'http://localhost:8000'
 
 const PayButton = ({cartItems})=>{
     const handleCheckout = ()=>{
