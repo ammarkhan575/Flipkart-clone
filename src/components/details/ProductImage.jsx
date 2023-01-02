@@ -38,6 +38,7 @@ const StyledButton = styled(Button)(({theme})=>({
 
 const ProductImage = ({product})=>{
     const [quantity,setQuantity] = useState(1);
+    setQuantity(1);
     const naviagate = useNavigate();
     const dispatch = useDispatch();
     const {id} = product;
